@@ -1,0 +1,46 @@
+# The following functions define multiple ways of finding the nth Fibonacci number
+
+def fib0(i):
+  if i == 0:
+    return 0
+  elif i == 1:
+    return 1
+  else:
+    return fib(i-1) + fib(i-2)
+
+def fib1(i):
+	A = [0,1]
+	for x in range(i-1):
+		A.append(A[-1]+A[-2])
+	return A[-1]
+
+def fib2(i):
+	a,b = 0,1
+	for x in range(i-1):
+		a,b = b,a+b
+	return b
+
+# Intro to OOP (Object Oriented Programming)
+	# Defining a class
+
+class counter:
+	def __init__(self):
+		self._x = 0
+	def value(self):
+		return self._x
+	def inc(self):
+		self._x += 1
+	def __str__(self):
+		return str(self._x)
+
+	# Understanding inheritance
+	# Because I created a seperate module/file for the child class, to run the code, I have to import the parent class 
+from counterClass import counter
+
+class fancyCounter(counter):
+	def __init__(self,step):
+		super().__init__()
+		self.step = step
+	def inc(self):
+		self._x += self._step
+
