@@ -34,8 +34,8 @@ class counter:
 		return str(self._x)
 
 	# Understanding inheritance
-	# Because I created a seperate module/file for the child class, to run the code, I have to import the parent class 
-from counterClass import counter
+	# Because I created a seperate module/file for the child class from the parent class, to run the code,
+	# I have to import the parent class from counterClass import counter
 
 class fancyCounter(counter):
 	def __init__(self,step):
